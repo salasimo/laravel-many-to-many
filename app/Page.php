@@ -2,10 +2,7 @@
 
 namespace App;
 
-use App\Tag;
-use App\Photo;
-use App\Category;
-use App\User;
+
 
 use Illuminate\Database\Eloquent\Model;
 
