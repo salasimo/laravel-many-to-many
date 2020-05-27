@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\InfoUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -36,4 +37,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function info()
+    {
+        return $this->hasOne('App\InfoUser');
+    }
+
+    public function pages()
+    {
+        return $this->hasMany('App\Page');
+    }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag');
+    }
+
+    public function categories()
+    {
+        return $this->hasMany('App\Category');
+    }
+
+    public function photos()
+    {
+        return $this->hasMany('App\Photo');
+    }
 }
